@@ -1,0 +1,13 @@
+<h1><%= @data %></h1>
+
+<% if @include %>
+  <% if @valid_word %>
+    <p>"Congrats, you won!"</p>
+  <% else %>
+    <p>"This is not a valid English word..."</p>
+  <% end %>
+<% else %>
+  <p>"Some or all of these letters were not included in the list."</p>
+<% end %>
+
+<%= link_to "Play again", new_path %>

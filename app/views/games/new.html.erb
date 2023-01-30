@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="text-center">New game</h1>
+
+  <div>
+    <h2 class="text-center">
+      <%= @letters %>
+    </h2>
+  </div>
+
+  <div>
+    <form action="/score" method="post" data-turbo="false">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+      <div class="form-group">
+        <label for="word">What's the longest word you can find?</label>
+        <input type="text" name="word" class="form-control">
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Play!" class="form-control 'btn btn-default'">
+      </div>
+    </form>
+  </div>
+</div>
